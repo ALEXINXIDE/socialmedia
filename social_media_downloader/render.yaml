@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: social-media-downloader
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: FLASK_ENV
+        value: production
+    healthCheckPath: /
+    autoDeploy: false
+

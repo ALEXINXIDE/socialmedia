@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Video Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Social Media Video Downloader</h1>
+            <p class="subtitle">Download videos from all major platforms in HD quality</p>
+        </header>
+
+        <main class="main-content">
+            <div class="download-section">
+                <div class="url-input-container">
+                    <input 
+                        type="text" 
+                        id="urlInput" 
+                        placeholder="Paste video URL here..." 
+                        class="url-input"
+                    >
+                    <button id="pasteBtn" class="paste-btn" title="Paste from clipboard">
+                        <i class="fas fa-clipboard"></i>
+                    </button>
+                </div>
+
+                <div class="platform-icons">
+                    <div class="platform-icon" data-platform="youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </div>
+                    <div class="platform-icon" data-platform="tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </div>
+                    <div class="platform-icon" data-platform="instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </div>
+                    <div class="platform-icon" data-platform="facebook">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </div>
+                    <div class="platform-icon" data-platform="twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </div>
+                    <div class="platform-icon" data-platform="vimeo">
+                        <i class="fab fa-vimeo"></i>
+                        <span>Vimeo</span>
+                    </div>
+                </div>
+
+                <div class="options-section">
+                    <div class="quality-selector">
+                        <label for="qualitySelect">Quality:</label>
+                        <select id="qualitySelect" class="quality-select">
+                            <option value="best">Best Quality</option>
+                            <option value="HD">HD (720p)</option>
+                            <option value="4K">4K (2160p)</option>
+                            <option value="audio">Audio Only</option>
+                        </select>
+                    </div>
+
+                    <div class="format-selector">
+                        <label for="formatSelect">Format:</label>
+                        <select id="formatSelect" class="format-select">
+                            <option value="video">Video</option>
+                            <option value="audio">Audio (MP3)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="downloadBtn" class="download-btn">
+                    <i class="fas fa-download"></i>
+                    Download
+                </button>
+
+                <div id="progressSection" class="progress-section hidden">
+                    <div class="progress-info">
+                        <span id="progressText">Preparing download...</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <div class="download-speed">
+                        <span id="downloadSpeed">Speed: N/A</span>
+                    </div>
+                </div>
+
+                <div id="resultSection" class="result-section hidden">
+                    <div class="result-info">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Download completed!</span>
+                    </div>
+                    <button id="downloadFileBtn" class="download-file-btn">
+                        <i class="fas fa-file-download"></i>
+                        Download File
+                    </button>
+                </div>
+
+                <div id="errorSection" class="error-section hidden">
+                    <div class="error-info">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span id="errorMessage">An error occurred</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-info-section hidden" id="videoInfoSection">
+                <div class="video-info">
+                    <img id="videoThumbnail" class="video-thumbnail" alt="Video thumbnail">
+                    <div class="video-details">
+                        <h3 id="videoTitle">Video Title</h3>
+                        <p id="videoUploader">Uploader</p>
+                        <p id="videoDuration">Duration</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="supported-platforms">
+                <h3>Supported Platforms</h3>
+                <div class="platform-list">
+                    <span class="platform-tag">YouTube</span>
+                    <span class="platform-tag">TikTok</span>
+                    <span class="platform-tag">Instagram</span>
+                    <span class="platform-tag">Facebook</span>
+                    <span class="platform-tag">Twitter/X</span>
+                    <span class="platform-tag">Vimeo</span>
+                    <span class="platform-tag">Reddit</span>
+                    <span class="platform-tag">Twitch</span>
+                    <span class="platform-tag">LinkedIn</span>
+                    <span class="platform-tag">Dailymotion</span>
+                </div>
+            </div>
+            <p class="disclaimer">
+                <i class="fas fa-info-circle"></i>
+                Please respect copyright laws and only download content you have permission to use.
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
